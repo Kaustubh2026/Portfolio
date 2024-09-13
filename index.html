@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <link rel="stylesheet" href="./index.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="utlities.css">
+  <style>
+    body {
+      cursor: url('https://example.com/cricket-ball.png'), auto;
+      /* Replace with the URL of your cricket ball cursor */
+      /* font-family: 'Pacifico', cursive; */
+      /* font-family: "Handjet", sans-serif; */
+      font-family: "Sofadi One", system-ui;
+      background-image: url(https://bitsum.com/wp-content/uploads/dark-background-images-5561-5821-hd-wallpapers.jpg?w=640);
+      background-repeat: no-repeat;
+      background-size: cover;
+      /* Make sure the image covers the entire background */
+      /* background-attachment: fixed; */
+
+    }
+
+    .dark-mode {
+      background-color: #1a202c;
+      /* Dark background color */
+      color: #edf2f7;
+      /* Light text color */
+    }
+
+    .dark-mode .bg-white {
+      background-color: #2d3748;
+      /* Dark background for elements */
+    }
+
+    .dark-mode .text-gray-800 {
+      color: #e2e8f0;
+      /* Light gray text */
+    }
+
+    .dark-mode .bg-yellow-500 {
+      background-color: #dd6b20;
+      /* Dark mode button color */
+    }
+
+    .dark-mode .hover\:bg-yellow-600:hover {
+      background-color: #c05621;
+      /* Dark mode button hover color */
+    }
+
+    .tea-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .tea-popup img {
+      width: 100px;
+    }
+    /* Project Section */
+.projects-section {
+    padding: 80px 0;
+ 
+    color: #ffffff;
+}
+
+.section-title h2 {
+    font-family: 'YourFont', sans-serif;
+    font-size: 3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Project Container */
+.project {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 30px;
+}
+
+/* Left Side - Project Description */
+.project-description {
+    flex: 1;
+    max-width: 600px;
+}
+
+.project-description h3 {
+    font-family: 'YourFont', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.project-description p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #b0b0b0;
+}
+
+.project-description ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.project-description ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #b0b0b0;
+}
+.project-description p
+{
+  color: #ffffff;
+}
+.project-link {
+    display: flex;
+    align-items: center;
+}
+
+.explore-link {
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid #ffffff;
+    margin-right: 20px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.explore-link:hover {
+    color: #f0a500;
+    border-color: #f0a500;
+}
+
+.github-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* Right Side - Project Image */
+.project-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+    
+  </style>
+</head>
+
+<body class="bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
+
+  <!-- Navbar -->
+  <nav class="py-6 px-8 shadow-lg">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div>
+        <a href="#" class="text-lg font-bold text-white dark:text-gray-100">Logo</a>
+      </div>
+      <div class="hidden lg:flex space-x-8 text-lg text-white dark:text-white">
+        <a href="#projects"
+          class=" px-4 py-2 bg-white text-black rounded-full font-semibold hover:bg-red-600">Projects</a>
+        <a href="#contact"
+          class=" px-4 py-2 bg-white text-black rounded-full font-semibold  hover:bg-red-600">Contact</a>
+        <a href="#footer" class=" px-4 py-2 bg-white text-black rounded-full font-semibold hover:bg-red-600 ">Links</a>
+      </div>
+      <div class="hidden lg:flex items-center space-x-6">
+        <a href="https://drive.google.com/u/0/uc?id=1Mh3TqVdlkFRvO3iKPa-St_5PapfAdImB&export=download" target="_blank"
+          download="Kaustubh_Muley_Resume.pdf"
+          class="px-4 py-2 bg-red-500 text-white rounded-full font-semibold hover:bg-red-600">Resume</a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="lg:hidden block text-xl focus:outline-none">
+        <span class="material-icons">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="mt-16 text-center">
+    <div class="max-w-3xl mx-auto">
+      <img src="image.png" alt="Avatar" class="mx-auto rounded-full w-32 h-32 object-cover">
+      <h1 class="mt-6 text-4xl font-bold text-white dark:text-gray-100">I'm Kaustubh Muley</h1>
+      <h1 class="mt-6 text-4xl font-bold text-white dark:text-gray-100">Have a <span id="teaWord"
+          class="cursor-pointer text-yellow-500 font-bold">Tea</span> Before you enter!!!</h1>
+      <h2 class="mt-4 text-3xl font-extrabold text-white dark:text-gray-200">I love to Code and Cricket</h2>
+      <a href="https://github.com/Kaustubh2026" target="_blank"
+        class="mt-6 inline-block px-6 py-3 bg-white text-black font-semibold rounded-full hover:bg-red-600">CONNECT
+        WITH ME</a>
+    </div>
+  </section>
+
+  <!-- Tea Popup -->
+  <div id="teaPopup" class="tea-popup">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6awo6yvlDcBrdtpyrKmMwI9TKXl0-0U46eA&s"
+      alt="Tea Symbol">
+    <p class="mt-4">Enjoy your tea!</p>
+  </div>
+  <section id="about" class="about py-16  dark:bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-white dark:text-gray-100 text-center mb-8">
+        About Me
+      </h2>
+      <p class="text-lg text-white dark:text-gray-300 text-center mb-8">
+        Here you will find more information about me, what I do, and my current skills mostly in terms of programming
+        and technology.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div class="about__content-main">
+          <h3 class="text-2xl font-semibold text-red-500 dark:text-gray-100 mb-4">Get to know me!</h3>
+          <p class="text-lg text-white dark:text-gray-300 mb-4">
+            I'm a <strong>Frontend Focused Web Developer</strong> building and managing the Front-end of Websites. Check
+            out some of my work in the <strong>Projects</strong> section.
+          </p>
+          <p class="text-lg text-white dark:text-gray-300 mb-4">
+            I also like sharing content related to the stuff that I have learned in<strong>Web Development</strong> Feel
+            free to Connect or Follow me on my <a href="https://www.linkedin.com/in/kaustubh-muley-827b76257/"
+              target="_blank" class="text-yellow-500 underline">Linkedin</a> and <a
+              href="https://www.instagram.com/_kaus2bh/" target="_blank" class="text-yellow-500 underline">Instagram</a>
+            .</p>
+          <p class="text-lg text-white dark:text-gray-300 mb-8">
+            I'm open to <strong>Job</strong> opportunities where I can contribute, learn and grow. If you have a good
+            opportunity that matches my skills then don't hesitate to <strong>contact</strong> me.
+          </p>
+          <!-- <a href="#contact" class="px-6 py-3 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600">Contact</a> -->
+        </div>
+        <div class="about__content-skills">
+          <h3 class="text-2xl font-semibold text-red-500 dark:text-gray-100 mb-4">My Skills</h3>
+          <div class="grid grid-cols-2 gap-4 md:grid-cols-3  ">
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">HTML</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">CSS</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg  hover:bg-red-600">JavaScript</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">React</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">Tailwind CSS Material UI
+            </div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">PHP</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">SASS</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">MySql</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">Github</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">Machine Leraning(Basic)
+            </div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">Python</div>
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg hover:bg-red-600">VsCode</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Projects</h2>
+        </div>
+        <div class="project">
+            <!-- Left: Project Description -->
+            <div class="project-description">
+                <h3>Portfolio <strong style="color: #ff0000;">#1</strong></h3>
+            
+                <p >A Platform That Connects The Farmer and The Merchant </p>
+                <ul>
+                    <li>HTML</li>
+                    <li>Tailwind Material UI</li>
+                    <li>JS</li>
+                    <li>Machine Learning</li>
+                </ul>
+                <div class="project-link">
+                    <a href="https://github.com/Kaustubh2026/KrishiSanjivani" target="_blank" class="explore-link">Explore this project</a>
+                 
+                </div>
+            </div>
+            <!-- Right: Project Image -->
+            <div class="project-image">
+                <img src="Project1.png" alt="Project Screenshot" />
+            </div>
+        </div>
+        <br>
+        <div class="project">
+          <!-- Left: Project Description -->
+          <div class="project-description">
+              <h3>Portfolio <strong style="color: #ff0000;">#2</strong></h3>
+              <p>College Event Management Website For VIT , VIIT, VU</p>
+              <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JS</li>
+                  <li>PHP , MySql</li>
+              </ul>
+              <div class="project-link">
+                  <a href="https://github.com/Kaustubh2026/WTCP" target="_blank" class="explore-link">Explore this project</a>
+                  
+                   
+                </a>
+              </div>
+          </div>
+          <!-- Right: Project Image -->
+          <div class="project-image">
+              <img src="project2.png" alt="Project Screenshot" />
+          </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <p style="font-size: 40px;  color: rgb(173, 10, 10);">More to coming Soon................</p>
+  
+    </div>
+</section>
+
+
+  
+  
+
+  <!-- Contact Section -->
+  <!-- <section id="contact" class="container mx-auto my-16">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 dark:text-gray-100">Contact Me</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300">Feel free to reach out for collaborations or just to say hi!</p>
+    </div>
+
+    <form action="#" method="POST" class="max-w-lg mx-auto bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+      <div class="mb-6">
+        <label for="name" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Name</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md">
+      </div>
+      <div class="mb-6">
+        <label for="email" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md">
+      </div>
+      <div class="mb-6">
+        <label for="message" class="block text-gray-700 dark:text-gray-300 text-sm font-medium mb-2">Message</label>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md"></textarea>
+      </div>
+      <button type="submit" class="px-6 py-3 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600">Send Message</button>
+    </form>
+  </section> -->
+
+  <!-- Footer -->
+  <footer id="footer" class="py-6 px-8 shadow-lg">
+    <div class="text-center text-white dark:text-gray-500">
+      <p>&copy; 2024 Kaustubh Muley. All rights reserved.</p>
+      
+      <div class="flex justify-center space-x-4 mt-4">
+        <!-- GitHub -->
+        <a href="https://github.com/Kaustubh2026" target="_blank" class="text-white hover:text-gray-500 transition-colors">
+          <i class="fab fa-github text-xl"></i>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/kaustubh-muley-827b76257/" target="_blank" class="text-white hover:text-gray-500 transition-colors">
+          <i class="fab fa-linkedin text-xl"></i>
+        </a>
+        <!-- Twitter -->
+        <!-- <a href="https://twitter.com/yourprofile" target="_blank" class="text-white hover:text-gray-500 transition-colors">
+          <i class="fab fa-twitter text-xl"></i>
+        </a> -->
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/_kaus2bh/" target="_blank" class="text-white hover:text-gray-500 transition-colors">
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <!-- Email -->
+        <a href="mailto: mkaustubh2026@gmail.com" class="text-white hover:text-gray-500 transition-colors">
+          <i class="fas fa-envelope text-xl"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script>
+
+    document.getElementById('darkModeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    document.getElementById('teaWord').addEventListener('click', () => {
+      document.getElementById('teaPopup').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('teaPopup').style.display = 'none';
+      }, 3000);
+    });
+  </script>
+
+</body>
+
+</html>
